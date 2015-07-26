@@ -6,3 +6,9 @@ Will have a donate button.
 Website will have a retro-future computer look to it. Think Cogmind.
 See image in this folder for website concept.
 Theme color: #00CC00
+
+SITE TITLE			[Flickering Graphic]
+Brief Descriptor
+
+PlanetWar [Highlights on Hovering]
+StarGraph [Highlights on Hovering]
