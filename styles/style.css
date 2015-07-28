@@ -3,12 +3,14 @@ html {
 	font-family: 'Droid Sans Mono', sans serif;
 }
 /* Style heading */
-h1{
-	margin: 0;
-	padding: 0px 0;
+h1,h2{
+	margin: 0px;
+	padding: 0px 0px 10px 0px;
 	font-size: medium;
 	text-align: left;
+	font-weight: normal;
 }
+
 /*Style Paragraph and list elements */
 p, li{	
 	list-style: square;
@@ -32,10 +34,55 @@ body {
 	border: 5px dotted;
 	color: #00CC00;
 }
+/*Code for the welcome message type in*/
+.welcomeMessage {
+	width: 0; 
+	height: 32px;
+	overflow: hidden;
+	animation: welcomeTyper 3s steps(42) forwards, cursor 1s 3s step-end infinite;
+	border-right: 1ch solid;
+}
+
+@keyframes welcomeTyper{
+	from {
+		width: 0;
+	}
+	100%{
+		width: 46ch;
+	}
+
+}
+
+@keyframes cursor{
+	from {
+		border-right: 1ch black;
+	}
+	50% {
+		border-right: 1ch #00CC00;
+	}
+}
+
+/*Code for blinking access*/
+.blinkAccess {
+	animation-duration: 1s;
+	animation-name: accessBlinker;
+	animation-iteration-count: infinite;
+	animation-timing-function: step-end;
+}
+
+@keyframes accessBlinker{
+	0% {
+		color: #00CC00;
+	}
+	50% {
+		color: black;
+		background:#00CC00;
+	}
+}
+
 /*Code to make selections highlighted on hover*/
 .planetIcon {
-	color:#00CC00;
-	background: black;
+	color: #00CC00;
 	text-decoration: none;
 }
 .planetIcon:hover  {
@@ -44,7 +91,6 @@ body {
 }
 .stellarPlotIcon {
 	color:#00CC00;
-	background: black;
 	text-decoration: none;	
 }
 .stellarPlotIcon:hover{
@@ -53,7 +99,6 @@ body {
 }
 .aboutIcon{
 	color:#00CC00;
-	background: black;
 	text-decoration: none;
 }
 .aboutIcon:hover{
