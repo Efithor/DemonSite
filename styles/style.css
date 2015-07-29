@@ -62,7 +62,7 @@ body {
 	}
 }
 
-/*Code for blinking access*/
+/*Code for blinking access message*/
 .blinkAccess {
 	animation-duration: 1s;
 	animation-name: accessBlinker;
