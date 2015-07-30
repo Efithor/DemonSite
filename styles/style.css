@@ -2,30 +2,21 @@ html {
 	font-size: 10px; 
 	font-family: 'Droid Sans Mono', sans serif;
 }
-/* Style heading */
-h1,h2{
-	margin: 0px;
-	padding: 0px 0px 10px 0px;
-	font-size: medium;
-	text-align: left;
-	font-weight: normal;
-}
 
-/*Style Paragraph and list elements */
-p, li{	
-	list-style: square;
+/*I.1 Style Paragraph and list elements */
+p{	
 	font-size: medium;
 	line-height: 2;
 	letter-spacing: 1px;
 	clear: center;
 }
-/* Style Image */
+/*I.2 Style Image */
 img{
 	display: block;
 	margin: 0 auto;
 	float: right;
 }
-/*Style Body */
+/*I.3 Style Body */
 body {
 	width: 600px;
 	margin: 20px auto;
@@ -34,40 +25,41 @@ body {
 	border: 5px dotted;
 	color: #00CC00;
 }
-/*Code for the welcome message type in*/
-.welcomeMessage {
-	width: 0; 
+/*II.0 Code to type in text*/
+/*Characters type in at 0.1 seconds per step for the first line, then increases to */
+/*II.1 Code to type in access message */
+.accessMessage {
+	width: 0;
 	height: 32px;
 	overflow: hidden;
-	animation: welcomeTyper 3s steps(42) forwards, cursor 1s 3s step-end infinite;
+	animation: accessTyper 2s 0s steps(20) forwards, accessCursorHide 0s 4s step-end forwards;
 	border-right: 1ch solid;
 }
 
-@keyframes welcomeTyper{
-	from {
+@keyframes accessTyper{
+	from{
 		width: 0;
 	}
 	100%{
-		width: 46ch;
+		width: 24ch;
 	}
-
 }
-
-@keyframes cursor{
+@keyframes accessCursorHide{
 	from {
-		border-right: 1ch black;
-	}
-	50% {
 		border-right: 1ch #00CC00;
 	}
+	100% {
+		border-right: 1ch black;
+	}
 }
 
-/*Code for blinking access message*/
+/*II.1.a Code for blinking access message*/
 .blinkAccess {
-	animation-duration: 1s;
+	animation-duration: 2s;
 	animation-name: accessBlinker;
 	animation-iteration-count: infinite;
 	animation-timing-function: step-end;
+	animation-delay: 2s
 }
 
 @keyframes accessBlinker{
@@ -80,28 +72,214 @@ body {
 	}
 }
 
-/*Code to make selections highlighted on hover*/
+/*II.2 Code for the welcome message type in*/
+.welcomeMessage {
+	width: 0; 
+	height: 32px;
+	overflow: hidden;
+	animation: welcomeTyper 0.26s 4s steps(26) forwards, welcomeCursorShow 0s 4s step-end forwards, welcomeCursorHide 0s 4.26s step-end forwards;
+	border-right: 1ch solid black;
+}
+
+@keyframes welcomeTyper{
+	from {
+		width: 0;
+	}
+	to{
+		width: 26ch;
+	}
+
+}
+
+@keyframes welcomeCursorShow{
+	from {
+		border-right: 1ch black;
+	}
+	to {
+		border-right: 1ch #00CC00;
+	}
+}
+
+@keyframes welcomeCursorHide{
+	from {
+		border-right: 1ch #00CC00;
+	}
+	to {
+		border-right: 1ch black;
+	}
+}
+
+/* II.3 Code to type in the selection options.*/
+/* II.3.a Planetwar typing code */
 .planetIcon {
+	width: 0;
+	height: 32px;
+	overflow: hidden;
+	border-right: 1ch solid black;
+	animation: planetwarTyper 0.17s 4.26s steps(17) forwards, planetwarCursorShow 0s 4.26s step-end forwards, planetwarCursorHide 0s 4.43s step-end forwards;
+}
+.planetIconLink {
 	color: #00CC00;
 	text-decoration: none;
+	
 }
-.planetIcon:hover  {
+@keyframes planetwarTyper{
+	from {
+		width: 0;
+	}
+	to {
+		width: 17ch;
+	}
+}
+@keyframes planetwarCursorShow{
+	from {
+		border-right: 1ch black;
+	}
+	to {
+		border-right: 1ch #00CC00;
+	}
+}
+@keyframes planetwarCursorHide{
+	from {
+		border-right: 1ch #00CC00;
+	}
+	to {
+		border-right: 1ch black;
+	}
+}
+/* II.3.b StellarPlot typing code */
+.stellarPlotIcon {
+	width: 0;
+	height: 32px;
+	overflow: hidden;
+	border-right: 1ch solid black;
+	animation: stellarPlotTyper 0.19s 4.43s steps(19) forwards, stellarPlotCursorShow 0s 4.43s step-end forwards, stellarPlotCursorHide 0s 4.62s step-end forwards;
+}
+.stellarPlotIconLink {
+	color: #00CC00;
+	text-decoration: none;
+	
+}
+@keyframes stellarPlotTyper{
+	from {
+		width: 0;
+	}
+	to {
+		width: 19ch;
+	}
+}
+@keyframes stellarPlotCursorShow{
+	from {
+		border-right: 1ch black;
+	}
+	to {
+		border-right: 1ch #00CC00;
+	}
+}
+@keyframes stellarPlotCursorHide{
+	from {
+		border-right: 1ch #00CC00;
+	}
+	to {
+		border-right: 1ch black;
+	}
+}
+/* II.3.c About typing code*/
+.aboutIcon {
+	width: 0;
+	height: 32px;
+	overflow: hidden;
+	border-right: 1ch solid black;
+	animation: aboutTyper 0.13s 4.62s steps(13) forwards, aboutCursorShow 0s 4.62s step-end forwards, aboutCursorHide 0s 4.75s step-end forwards;
+}
+
+@keyframes aboutTyper{
+	from {
+		width: 0;
+	}
+	to {
+		width: 13ch;
+	}
+}
+@keyframes aboutCursorShow{
+	from {
+		border-right: 1ch black;
+	}
+	to {
+		border-right: 1ch #00CC00;
+	}
+}
+@keyframes aboutCursorHide{
+	from {
+		border-right: 1ch #00CC00;
+	}
+	to {
+		border-right: 1ch black;
+	}
+}
+/*II.3.d Make a selection typing code*/
+.selectionMessage {
+	width: 0;
+	height: 32px;
+	overflow: hidden;
+	border-right: 1ch solid black;
+	animation: selectionMessageTyper 0.19s 4.75s steps(19) forwards, selectionMessageCursorShow 0s 4.75s step-end forwards, selectionMessageCursorBlink 1s 4.94s step-end infinite;
+}
+
+@keyframes selectionMessageTyper {
+	from{
+		width: 0ch;
+	}
+	to {
+		width:19ch;
+	}
+}
+@keyframes selectionMessageCursorShow{
+	from{
+		border-right: 1ch black;
+	}
+	to {
+		border-right: 1ch #00CC00;
+	}
+}
+@keyframes selectionMessageCursorBlink{
+	from{
+		border-right: 1ch black;
+	}
+	50%{
+		border-right: 1ch #00CC00;
+	}
+}
+/*III.0 Input */
+/*III.1 Code to make selections highlighted on hover*/
+
+.planetIconLink:hover  {
 	background:#00CC00;
 	color: black;	
 }
-.stellarPlotIcon {
-	color:#00CC00;
-	text-decoration: none;	
-}
-.stellarPlotIcon:hover{
+
+.stellarPlotIconLink:hover{
 	background:#00CC00;
 	color: black;
 }
-.aboutIcon{
-	color:#00CC00;
-	text-decoration: none;
-}
-.aboutIcon:hover{
+
+.aboutIconLink:hover{
 	background:#00CC00;
 	color: black;
+}
+
+/*IV.1 Code to make Planetwar and StellarPlot flash red when clicked*/
+
+#go:target .planetIconLink{
+	animation: accessDeniedBlink 0.5s step-end 3;
+} 
+@keyframes accessDeniedBlink{
+	from{
+		background: transparent;
+		color: #00CC00;
+	}
+	50% {
+		background: red;
+		color: black;
+	}
 }
